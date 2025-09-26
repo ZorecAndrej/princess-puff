@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom properties for luxury theme */
+:root {
+  /* Colors - Complete Luxe Noir Color System */
+  --color-black: #000000;
+  --color-gold: #d4a574;
+  --color-white: #ffffff;
+  --color-gray: #cccccc;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+
+  /* Color variants for hover states */
+  --color-gold-light: #e6c9a8;
+  --color-gold-dark: #b88d5c;
+  --color-black-90: rgba(0, 0, 0, 0.9);
+  --color-gold-90: rgba(212, 165, 116, 0.9);
+  --color-gray-light: #e5e5e5;
+  --color-gray-dark: #999999;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Typography Scale */
+  --text-xs: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-5xl: 3rem; /* 48px */
+
+  /* Line Heights */
+  --leading-xs: 1.25rem; /* 20px */
+  --leading-base: 1.5rem; /* 24px */
+  --leading-2xl: 2rem; /* 32px */
+  --leading-3xl: 2.5rem; /* 40px */
+  --leading-5xl: 3.5rem; /* 56px */
+
+  /* Spacing */
+  --spacing-luxury: 2.5rem;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-white text-black;
+    font-family: var(--font-inter);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-playfair);
+  }
+}
+
+/* Component styles */
+@layer components {
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-luxury {
+    @apply px-6 py-3 bg-black text-white font-medium tracking-wide uppercase transition-colors duration-300 hover:bg-gray-800;
+  }
+
+  .btn-luxury-gold {
+    @apply px-6 py-3 bg-princess-gold text-black font-medium tracking-wide uppercase transition-colors duration-300 hover:bg-royal-gold-dark;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Typography scale utilities */
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--leading-base);
+  }
+
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-2xl);
+  }
+
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--leading-3xl);
+  }
+
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--leading-5xl);
+  }
+
+  /* Responsive typography scaling */
+  @screen sm {
+    .text-2xl {
+      font-size: calc(var(--text-2xl) * 1.1);
+    }
+    .text-3xl {
+      font-size: calc(var(--text-3xl) * 1.1);
+    }
+    .text-5xl {
+      font-size: calc(var(--text-5xl) * 1.1);
+    }
+  }
+
+  @screen lg {
+    .text-2xl {
+      font-size: calc(var(--text-2xl) * 1.2);
+    }
+    .text-3xl {
+      font-size: calc(var(--text-3xl) * 1.2);
+    }
+    .text-5xl {
+      font-size: calc(var(--text-5xl) * 1.2);
+    }
+  }
+
+  /* Grid system utilities */
+  .container-grid {
+    @apply max-w-container mx-auto px-mobile md:px-desktop;
+  }
+
+  /* Responsive spacing utilities */
+  .mt-responsive {
+    @apply mt-4 md:mt-6 lg:mt-8;
+  }
+
+  .mb-responsive {
+    @apply mb-4 md:mb-6 lg:mb-8;
+  }
+
+  .py-responsive {
+    @apply py-6 md:py-8 lg:py-12;
+  }
+
+  .px-responsive {
+    @apply px-mobile md:px-desktop;
+  }
+
+  /* Luxury utility classes */
+  .luxury-gradient {
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gold) 100%);
+  }
+
+  .luxury-gradient-subtle {
+    background: linear-gradient(135deg, var(--color-black) 0%, rgba(212, 165, 116, 0.2) 100%);
+  }
+
+  .gold-accent {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+  }
+
+  .gold-accent-border {
+    border: 1px solid var(--color-gold);
+  }
+
+  .gold-accent-border-2 {
+    border: 2px solid var(--color-gold);
+  }
+
+  .elegant-shadow {
+    box-shadow:
+      0 4px 20px rgba(212, 165, 116, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .elegant-shadow-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .elegant-shadow-hover:hover {
+    box-shadow:
+      0 8px 30px rgba(212, 165, 116, 0.25),
+      0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Focus states for accessibility */
+  .focus-gold:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  .focus-gold:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  /* Apply custom focus outline for keyboard navigation only */
+  *:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  /* Remove focus outline for mouse/touch but keep for keyboard */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Hover states */
+  .hover-opacity:hover {
+    opacity: 0.9;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+
+  /* Active states */
+  .active-scale:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Disabled states */
+  .disabled-opacity:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth scroll behavior */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
